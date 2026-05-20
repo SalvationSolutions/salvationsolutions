@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('C6cmf5kSENMKdP-sI');</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -393,6 +396,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.38); }
     <li><a href="#clients">Clients</a></li>
     <li><a href="#goals">Goals</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#mission-vision">About</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -402,6 +406,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.38); }
   <a href="#services"   onclick="closeMob()">Services</a>
   <a href="#goals"      onclick="closeMob()">Goals</a>
   <a href="#projects"   onclick="closeMob()">Projects</a>
+  <a href="#mission-vision" onclick="closeMob()">About</a>
 </div>
 
 <!-- HERO -->
@@ -414,7 +419,29 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.38); }
     <div class="h-pill">Strategic IT Solutions</div>
     <h1 class="h-h1">Salvation Solutions</h1>
     <p class="h-sub">Empowering Every Business — Enterprise to SME — Through Strategic IT Excellence</p>
-    <p class="h-desc">With 15+ years of experience in IT Asset Management, Service Delivery, and IT Operations, I help businesses achieve operational excellence and strategic technology alignment.</p>
+    <p class="h-desc" id="rotating-desc"></p>
+<script>
+  const rotatingTexts = [
+    "Helping businesses cut IT costs, reduce downtime, and scale smarter — from enterprise infrastructure to SME operations.",
+    "Deep expertise in IT Asset Management, Service Delivery, and Operations — delivering solutions that align technology with your business goals.",
+    "Whether you're managing rapid growth or aging infrastructure, we bring the strategy, tools, and hands-on expertise to transform your IT operations.",
+    "We don't just manage IT — we optimize it, scale it, and align it to drive real business growth.",
+    "Trusted by businesses across Metro Manila to deliver reliable IT solutions that reduce risk, improve efficiency, and support long-term growth."
+  ];
+  let rotIdx = 0;
+  const rotEl = document.getElementById('rotating-desc');
+  function showNext() {
+    rotEl.style.opacity = 0;
+    setTimeout(() => {
+      rotEl.textContent = rotatingTexts[rotIdx];
+      rotEl.style.opacity = 1;
+      rotIdx = (rotIdx + 1) % rotatingTexts.length;
+    }, 500);
+  }
+  rotEl.style.transition = 'opacity 0.5s ease';
+  showNext();
+  setInterval(showNext, 4000);
+</script>
     <div class="h-btns">
       <button class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Schedule Consultation</button>
     </div>
@@ -1071,6 +1098,120 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.38); }
   </div>
 </section>
 
+<!-- MISSION VISION -->
+<section id="mission-vision" style="padding: 80px 5vw; background: #0a0f1e; position: relative; overflow: hidden;">
+
+  <!-- Floating particles canvas -->
+  <div id="mv-particles" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;"></div>
+
+  <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
+
+    <!-- Header -->
+    <div style="text-align:center; margin-bottom:52px;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;">
+        <div style="width:40px;height:1px;background:rgba(245,166,35,0.5);"></div>
+        <span style="font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:#f5a623;">Salvation Solutions</span>
+        <div style="width:40px;height:1px;background:rgba(245,166,35,0.5);"></div>
+      </div>
+      <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(34px,5vw,52px);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1.05;">
+        Our <span style="color:#f5a623;">Mission</span><br/>&amp; Vision
+      </h2>
+      <p style="margin-top:12px;font-size:15px;color:rgba(255,255,255,0.4);font-weight:300;">The principles that drive everything we do</p>
+    </div>
+
+    <!-- Cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;" class="mv-cards">
+
+      <!-- Mission -->
+      <div style="background:linear-gradient(135deg,#0f2545 0%,#1a3a6e 100%);border:1px solid rgba(59,130,246,0.25);border-radius:20px;padding:36px 30px;position:relative;overflow:hidden;transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="position:absolute;width:180px;height:180px;border-radius:50%;top:-60px;right:-60px;background:#3b82f6;opacity:0.06;"></div>
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+          <svg width="24" height="24" fill="none" stroke="#3b82f6" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#3b82f6;margin-bottom:8px;">Mission</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em;">What We Do</h3>
+        <p style="font-size:14px;line-height:1.8;color:rgba(255,255,255,0.6);font-weight:300;">To empower every business — from enterprise to SME — with reliable, strategic IT solutions that reduce costs, minimize downtime, and drive sustainable growth through operational excellence and technology alignment.</p>
+      </div>
+
+      <!-- Vision -->
+      <div style="background:linear-gradient(135deg,#1a0e00 0%,#2d1a00 100%);border:1px solid rgba(245,166,35,0.25);border-radius:20px;padding:36px 30px;position:relative;overflow:hidden;transition:transform 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="position:absolute;width:180px;height:180px;border-radius:50%;top:-60px;right:-60px;background:#f5a623;opacity:0.06;"></div>
+        <div style="width:50px;height:50px;border-radius:14px;background:rgba(245,166,35,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+          <svg width="24" height="24" fill="none" stroke="#f5a623" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#f5a623;margin-bottom:8px;">Vision</div>
+        <h3 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-0.02em;">Where We're Going</h3>
+        <p style="font-size:14px;line-height:1.8;color:rgba(255,255,255,0.6);font-weight:300;">To become the most trusted IT partner in Metro Manila and beyond — recognized for transforming businesses through innovative technology strategies, proactive IT management, and a relentless commitment to client success.</p>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+      <div style="flex:1;height:1px;background:rgba(255,255,255,0.07);"></div>
+      <div style="width:6px;height:6px;border-radius:50%;background:#f5a623;opacity:0.5;"></div>
+      <span style="font-size:10px;letter-spacing:0.18em;color:rgba(255,255,255,0.2);text-transform:uppercase;">Core Pillars</span>
+      <div style="width:6px;height:6px;border-radius:50%;background:#f5a623;opacity:0.5;"></div>
+      <div style="flex:1;height:1px;background:rgba(255,255,255,0.07);"></div>
+    </div>
+
+    <!-- Pillars -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;" class="mv-pillars">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 16px;text-align:center;transition:background 0.3s,border-color 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:26px;margin-bottom:10px;">⚙️</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Operational Excellence</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);line-height:1.5;">Streamlined IT processes that keep your business running</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 16px;text-align:center;transition:background 0.3s,border-color 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:26px;margin-bottom:10px;">🛡️</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Reliability</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);line-height:1.5;">100% SLA compliance and proactive infrastructure management</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 16px;text-align:center;transition:background 0.3s,border-color 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:26px;margin-bottom:10px;">📈</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Growth Alignment</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);line-height:1.5;">Technology strategies built to scale with your business</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 16px;text-align:center;transition:background 0.3s,border-color 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.borderColor='rgba(255,255,255,0.07)'">
+        <div style="font-size:26px;margin-bottom:10px;">🤝</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Client Trust</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,0.4);line-height:1.5;">Long-term partnerships built on transparency and results</div>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    @media (max-width: 640px) {
+      .mv-cards    { grid-template-columns: 1fr !important; }
+      .mv-pillars  { grid-template-columns: 1fr 1fr !important; }
+    }
+  </style>
+
+  <script>
+    (function() {
+      var container = document.getElementById('mv-particles');
+      for (var i = 0; i < 25; i++) {
+        var p = document.createElement('div');
+        var size = (1 + Math.random() * 2) + 'px';
+        var dur  = (8 + Math.random() * 12) + 's';
+        var del  = (Math.random() * 10) + 's';
+        p.style.cssText = 'position:absolute;border-radius:50%;background:rgba(255,255,255,0.12);width:' + size + ';height:' + size + ';left:' + (Math.random()*100) + '%;animation:mvFloat ' + dur + ' ' + del + ' linear infinite;';
+        container.appendChild(p);
+      }
+    })();
+  </script>
+  <style>
+    @keyframes mvFloat {
+      0%   { transform: translateY(100%) translateX(0); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(-80px) translateX(30px); opacity: 0; }
+    }
+  </style>
+
+</section>
+
 <!-- CONTACT -->
 
 
@@ -1154,7 +1295,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.38); }
         </div>
         <div><div class="client-link-label">Greek To-Go</div><div class="client-link-sub">Facebook Page</div></div>
       </a>
-      <a href="https://www.instagram.com/greektogotavernaph/" target="_blank" rel="noopener" class="client-link-card">
+      <a href="https://www.instagram.com/greektogoph/" target="_blank" rel="noopener" class="client-link-card">
         <div class="client-link-icon ig">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </div>
@@ -1202,14 +1343,38 @@ async function handleSubmit() {
   const fn = document.getElementById('fn').value.trim();
   const fe = document.getElementById('fe').value.trim();
   const fp = document.getElementById('fp').value.trim();
+  const fc = document.getElementById('fc').value.trim();
+  const fs = document.getElementById('fs').value.trim();
+  const fm = document.getElementById('fm').value.trim();
   if (!fn || !fe || !fp) { errEl.textContent = 'Please fill in all required fields.'; errEl.style.display = 'block'; return; }
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const endpoint = document.getElementById('formspree-endpoint').value;
-    const res = await fetch(endpoint, { method: 'POST', headers: {'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({name:fn,email:fe,_replyto:fe,phone:selectedCode + ' ' + fp,company:document.getElementById('fc').value,service:document.getElementById('fs').value,message:document.getElementById('fm').value,'_subject':'New Consultation Request from ' + fn}) });
-    if (res.ok) { document.getElementById('form-inner').style.display='none'; document.getElementById('fok').classList.add('show'); }
-    else { throw new Error('Failed'); }
-  } catch(e) { errEl.textContent = 'Something went wrong. Please try again or contact directly.'; errEl.style.display='block'; btn.disabled=false; btn.textContent='Send Message'; }
+    // Send emails via EmailJS
+    try {
+      await emailjs.send('service_43qk2nx', 'template_rjhl74m', {
+        from_name: fn,
+        to_email:  fe,
+        company:   fc || 'N/A',
+        service:   fs || 'General IT Consulting',
+        message:   fm || 'No message provided',
+        phone:     selectedCode + ' ' + fp,
+      });
+    } catch(e) {
+      errEl.textContent = '❌ EmailJS error: ' + (e.text || e.message || JSON.stringify(e));
+      errEl.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Send Message';
+      return;
+    }
+
+    // Show success
+    document.getElementById('form-inner').style.display = 'none';
+    document.getElementById('fok').classList.add('show');
+  } catch(e) {
+    errEl.textContent = '❌ Unexpected error: ' + e.message;
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
 }
 
 
